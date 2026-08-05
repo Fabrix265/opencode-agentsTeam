@@ -184,12 +184,12 @@ Esto garantiza que cada agente solo pueda hacer lo que le corresponde a su rol. 
 
 1. Clonar este repositorio:
    ```bash
-   git clone https://github.com/TU-USUARIO/opencode-agents.git
+   git clone https://github.com/Fabrix265/opencode-agentsTeam.git
    ```
 2. Copiar los agentes necesarios a la carpeta de configuración de opencode:
    ```bash
    mkdir -p ~/.config/opencode/agents
-   cp opencode-agents/agents/*.md ~/.config/opencode/agents/
+   cp opencode-agentsTeam/agents/*.md ~/.config/opencode/agents/
    ```
    (o a `.opencode/agents/` dentro de un proyecto puntual, si se prefiere que apliquen solo ahí)
 3. Reiniciar opencode.
@@ -251,6 +251,16 @@ opencode-agentsTeam/
 
 ---
 
+## Recomendaciones
+
+- **Usar siempre un repositorio con git inicializado.** El diseño depende de los commits del `orchestrator` para poder retomar el trabajo tras una interrupción — sin git, se pierde esa red de seguridad.
+- **Empezar con un sistema chico** para la primera prueba. Es más fácil detectar si un agente se está comportando mal (o si un modelo gratuito no rinde en su rol) en un proyecto simple que en uno grande.
+- **Revisar `docs/PROGRESS.md` de vez en cuando** mientras el equipo trabaja, en vez de dejarlo corriendo por horas sin mirar nada. No hace falta intervenir, pero ayuda a detectar temprano si algo quedó `bloqueada` repetidamente.
+- **No usarlo todavía para sistemas críticos o con datos sensibles** (pagos, información personal, credenciales de producción) sin revisión humana adicional del código generado — el equipo no incluye un agente de seguridad dedicado.
+- **Confirmar los IDs de los modelos gratuitos antes de cada sesión larga** con `/models`, ya que son modelos en beta y pueden cambiar de nombre o dejar de estar disponibles.
+- **Leer el manual de usuario generado al final** como una forma más de validar el trabajo: si algo ahí no coincide con lo que se pidió originalmente, es una señal de que conviene revisar la spec o el `PROGRESS.md` antes de dar el sistema por terminado.
+- **Ajustar los límites de `steps` y de reintentos** si se nota que el equipo se queda corto en tareas complejas o, al contrario, tarda demasiado en detenerse cuando algo no está funcionando.
+
 ## A futuro
 
 - Probar estos agentes en un proyecto real de principio a fin y documentar los resultados.
@@ -261,3 +271,8 @@ opencode-agentsTeam/
 Cualquier persona que pruebe este equipo antes, o tenga sugerencias, puede abrir un issue — es mi primer proyecto de este tipo y cualquier retroalimentación ayuda a mejorarlo.
 
 ---
+
+## Licencia
+
+[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0). 
+En resumen: se puede usar, modificar y compartir libremente para cualquier fin no comercial (proyectos personales, aprendizaje, investigación, organizaciones sin fines de lucro, educación). No está permitido su uso o distribución con fines comerciales sin permiso explícito. El texto completo está en [`LICENSE`](./LICENSE).
